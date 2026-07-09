@@ -1,17 +1,51 @@
 repositories {
     mavenCentral()
-    google() // Needed for androidx
+    google()
+
+    maven {
+        url = uri("https://maven.brott.dev/")
+    }
+
+    maven {
+        url = uri("https://repo.dairy.foundation/releases")
+    }
+
+    maven {
+        name = "dairySnapshots"
+        url = uri("https://repo.dairy.foundation/snapshots")
+    }
 }
 
 dependencies {
-    implementation 'org.firstinspires.ftc:Inspection:11.1.0'
-    implementation 'org.firstinspires.ftc:Blocks:11.1.0'
-    implementation 'org.firstinspires.ftc:RobotCore:11.1.0'
-    implementation 'org.firstinspires.ftc:RobotServer:11.1.0'
-    implementation 'org.firstinspires.ftc:OnBotJava:11.1.0'
-    implementation 'org.firstinspires.ftc:Hardware:11.1.0'
-    implementation 'org.firstinspires.ftc:FtcCommon:11.1.0'
-    implementation 'org.firstinspires.ftc:Vision:11.1.0'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation "org.firstinspires.ftc:Inspection:11.1.0"
+    implementation "org.firstinspires.ftc:Blocks:11.1.0"
+    implementation "org.firstinspires.ftc:RobotCore:11.1.0"
+    implementation "org.firstinspires.ftc:RobotServer:11.1.0"
+    implementation "org.firstinspires.ftc:OnBotJava:11.1.0"
+    implementation "org.firstinspires.ftc:Hardware:11.1.0"
+    implementation "org.firstinspires.ftc:FtcCommon:11.1.0"
+    implementation "org.firstinspires.ftc:Vision:11.1.0"
+
+    implementation "androidx.appcompat:appcompat:1.2.0"
+
+    implementation "dev.frozenmilk.dairy:CachingHardware:1.0.0"
+
+    implementation "org.codeblooded:Simulator:SNAPSHOT-70fbea7"
+//    implementation "org.codeblooded:DriverStationWindow:SNAPSHOT-70fbea7"
+//    implementation "org.codeblooded:MotorModeling:SNAPSHOT-70fbea7"
+
+    implementation "com.acmerobotics.dashboard:dashboard:0.6.0"
+
+    implementation "org.psilynx.psikit:core:0.2.0-beta2"
+    implementation "org.psilynx.psikit:ftc:0.2.0-beta2"
+
+    implementation 'com.pedropathing:ftc:2.1.1'
+    implementation 'com.pedropathing:telemetry:1.0.0'
+    implementation 'com.pedropathing:ivy:1.0.0'
+
+    testImplementation "junit:junit:4.13.2"
 }
 
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+}
