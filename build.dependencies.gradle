@@ -7,11 +7,14 @@ repositories {
     }
 
     maven {
+        url = uri("https://www.jitpack.io")
+    }
+
+    maven {
         url = uri("https://repo.dairy.foundation/releases")
     }
 
     maven {
-        name = "dairySnapshots"
         url = uri("https://repo.dairy.foundation/snapshots")
     }
 }
@@ -27,12 +30,9 @@ dependencies {
     implementation "org.firstinspires.ftc:Vision:11.1.0"
 
     implementation "androidx.appcompat:appcompat:1.2.0"
-
     implementation "dev.frozenmilk.dairy:CachingHardware:1.0.0"
 
-    implementation "org.codeblooded:Simulator:SNAPSHOT-70fbea7"
-//    implementation "org.codeblooded:DriverStationWindow:SNAPSHOT-70fbea7"
-//    implementation "org.codeblooded:MotorModeling:SNAPSHOT-70fbea7"
+    implementation "org.codeblooded.ftcodesim:Simulator:SNAPSHOT-ac3b38a"
 
     implementation "com.acmerobotics.dashboard:dashboard:0.6.0"
 
@@ -44,8 +44,4 @@ dependencies {
     implementation 'com.pedropathing:ivy:1.0.0'
 
     testImplementation "junit:junit:4.13.2"
-}
-
-tasks.withType(Test).configureEach {
-    useJUnitPlatform()
 }
